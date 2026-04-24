@@ -3,25 +3,18 @@ import { useInView } from 'react-intersection-observer'
 
 const projects = [
   {
-    num: '001', type: 'SAAS PRODUCT', emoji: '📊',
-    title: 'FlowBoard — Real-time Project Management',
-    desc: 'A collaborative project management tool with real-time updates, drag-and-drop boards, and AI-powered task prioritization. Scaled to 10k+ users.',
-    tags: ['Next.js', 'Socket.io', 'PostgreSQL', 'Redis', 'AWS'],
-    live: '#', github: '#',
+    num: '001', type: 'AI / PYTHON TOOL', emoji: '�',
+    title: 'Plagiarism Checker',
+    desc: 'A web-based plagiarism detection tool that compares documents and text for similarity using NLP techniques. Built with Python for the backend logic and a clean HTML/CSS frontend interface.',
+    tags: ['Python', 'HTML', 'CSS', 'NLP'],
+    live: '#', github: 'https://github.com/ztesfa88-png',
   },
   {
-    num: '002', type: 'API / BACKEND', emoji: '🔍',
-    title: 'NeuralSearch Engine',
-    desc: 'Semantic search engine using vector embeddings and LLM integration. Processes 1M+ queries/day with sub-100ms latency.',
-    tags: ['Python', 'FastAPI', 'Pinecone', 'OpenAI'],
-    live: '#', github: '#',
-  },
-  {
-    num: '003', type: 'MOBILE / WEB APP', emoji: '📈',
-    title: 'CryptoTrack Dashboard',
-    desc: 'Real-time cryptocurrency portfolio tracker with advanced charting, alerts, and DeFi protocol integrations.',
-    tags: ['React Native', 'GraphQL', 'Web3.js', 'D3.js'],
-    live: '#', github: '#',
+    num: '002', type: 'DESKTOP APP', emoji: '🏥',
+    title: 'Hospital Management System',
+    desc: 'A full-featured hospital management system handling patient records, doctor scheduling, appointments, and billing. Built with Java featuring a robust desktop UI.',
+    tags: ['Java', 'OOP', 'Database', 'Desktop App'],
+    live: '#', github: 'https://github.com/ztesfa88-png',
   },
 ]
 
