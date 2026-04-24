@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 
 const projects = [
   {
-    num: '001', type: 'AI / PYTHON TOOL', emoji: '�',
+    num: '001', type: 'AI / PYTHON TOOL', emoji: '🔍',
     title: 'Plagiarism Checker',
     desc: 'A web-based plagiarism detection tool that compares documents and text for similarity using NLP techniques. Built with Python for the backend logic and a clean HTML/CSS frontend interface.',
     tags: ['Python', 'HTML', 'CSS', 'NLP'],
@@ -15,6 +15,13 @@ const projects = [
     desc: 'A full-featured hospital management system handling patient records, doctor scheduling, appointments, and billing. Built with Java featuring a robust desktop UI.',
     tags: ['Java', 'OOP', 'Database', 'Desktop App'],
     live: '#', github: 'https://github.com/ztesfa88-png',
+  },
+  {
+    num: '003', type: 'WEB APP', emoji: '💼',
+    title: 'Personal Portfolio',
+    desc: 'This portfolio — a full-stack Next.js app with animated UI, scroll-triggered effects, a working contact form via Nodemailer, and deployed on Vercel.',
+    tags: ['Next.js', 'TypeScript', 'React', 'Nodemailer', 'Vercel'],
+    live: 'https://portfolio-ztesfa88.vercel.app', github: 'https://github.com/ztesfa88-png/portfolio',
   },
 ]
 
@@ -42,8 +49,10 @@ function ProjectCard({ p, i }: { p: typeof projects[0]; i: number }) {
           {p.tags.map(t => <span key={t} className="tag">{t}</span>)}
         </div>
         <div style={{ display: 'flex', gap: 16 }}>
-          <a href={p.live} className="btn-primary" style={{ padding: '8px 20px', fontSize: 12 }}>↗ Live Demo</a>
-          <a href={p.github} className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>⌥ GitHub</a>
+          {p.live !== '#' && (
+            <a href={p.live} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '8px 20px', fontSize: 12 }}>↗ Live Demo</a>
+          )}
+          <a href={p.github} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>⌥ GitHub</a>
         </div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 40, fontSize: 64, background: 'rgba(255,255,255,0.02)' }}>
@@ -62,7 +71,7 @@ export default function Projects() {
             <p className="section-label">03 — Projects</p>
             <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700 }}>Selected work</h2>
           </div>
-          <a href="#" style={{ fontFamily: 'Space Mono, monospace', fontSize: 13, color: 'var(--accent)', textDecoration: 'none' }}>View all projects →</a>
+          <a href="https://github.com/ztesfa88-png" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'Space Mono, monospace', fontSize: 13, color: 'var(--accent)', textDecoration: 'none' }}>View all projects →</a>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           {projects.map((p, i) => <ProjectCard key={p.num} p={p} i={i} />)}
