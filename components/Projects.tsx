@@ -1,0 +1,80 @@
+'use client'
+import { useInView } from 'react-intersection-observer'
+
+const projects = [
+  {
+    num: '001', type: 'SAAS PRODUCT', emoji: '📊',
+    title: 'FlowBoard — Real-time Project Management',
+    desc: 'A collaborative project management tool with real-time updates, drag-and-drop boards, and AI-powered task prioritization. Scaled to 10k+ users.',
+    tags: ['Next.js', 'Socket.io', 'PostgreSQL', 'Redis', 'AWS'],
+    live: '#', github: '#',
+  },
+  {
+    num: '002', type: 'API / BACKEND', emoji: '🔍',
+    title: 'NeuralSearch Engine',
+    desc: 'Semantic search engine using vector embeddings and LLM integration. Processes 1M+ queries/day with sub-100ms latency.',
+    tags: ['Python', 'FastAPI', 'Pinecone', 'OpenAI'],
+    live: '#', github: '#',
+  },
+  {
+    num: '003', type: 'MOBILE / WEB APP', emoji: '📈',
+    title: 'CryptoTrack Dashboard',
+    desc: 'Real-time cryptocurrency portfolio tracker with advanced charting, alerts, and DeFi protocol integrations.',
+    tags: ['React Native', 'GraphQL', 'Web3.js', 'D3.js'],
+    live: '#', github: '#',
+  },
+]
+
+function ProjectCard({ p, i }: { p: typeof projects[0]; i: number }) {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+
+  return (
+    <div ref={ref} style={{
+      border: '1px solid var(--border)', borderRadius: 16, overflow: 'hidden',
+      background: 'var(--card)', display: 'grid', gridTemplateColumns: '1fr auto',
+      opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(40px)',
+      transition: `all 0.7s ease ${i * 150}ms`,
+    }}
+      onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--accent)')}
+      onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+    >
+      <div style={{ padding: 32 }}>
+        <div style={{ display: 'flex', gap: 12, marginBottom: 20 }}>
+          <span style={{ fontFamily: 'Space Mono, monospace', fontSize: 11, color: 'var(--muted)' }}>{p.num}</span>
+          <span style={{ fontFamily: 'Space Mono, monospace', fontSize: 11, color: 'var(--accent)', background: 'rgba(0,255,136,0.08)', padding: '2px 10px', borderRadius: 100 }}>{p.type}</span>
+        </div>
+        <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, lineHeight: 1.3 }}>{p.title}</h3>
+        <p style={{ color: 'var(--muted)', fontSize: 14, lineHeight: 1.8, marginBottom: 20 }}>{p.desc}</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 24 }}>
+          {p.tags.map(t => <span key={t} className="tag">{t}</span>)}
+        </div>
+        <div style={{ display: 'flex', gap: 16 }}>
+          <a href={p.live} className="btn-primary" style={{ padding: '8px 20px', fontSize: 12 }}>↗ Live Demo</a>
+          <a href={p.github} className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>⌥ GitHub</a>
+        </div>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 40, fontSize: 64, background: 'rgba(255,255,255,0.02)' }}>
+        {p.emoji}
+      </div>
+    </div>
+  )
+}
+
+export default function Projects() {
+  return (
+    <section id="projects" style={{ padding: '120px 24px' }}>
+      <div className="container">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 64, flexWrap: 'wrap', gap: 16 }}>
+          <div>
+            <p className="section-label">03 — Projects</p>
+            <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700 }}>Selected work</h2>
+          </div>
+          <a href="#" style={{ fontFamily: 'Space Mono, monospace', fontSize: 13, color: 'var(--accent)', textDecoration: 'none' }}>View all projects →</a>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          {projects.map((p, i) => <ProjectCard key={p.num} p={p} i={i} />)}
+        </div>
+      </div>
+    </section>
+  )
+}
