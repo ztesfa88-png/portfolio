@@ -17,7 +17,7 @@ export default function About() {
             Engineer by<br />trade, creator<br />by passion
           </h2>
           <p style={{ color: 'var(--muted)', lineHeight: 1.9, marginBottom: 24, fontSize: 15 }}>
-            I'm Zelalem, a software engineer with 5+ years crafting high-performance web applications.
+            I'm Zelalem, a software engineer with 3+ years crafting high-performance web applications.
             I bridge the gap between design and engineering — writing clean code that users actually love to use.
           </p>
           <p style={{ color: 'var(--muted)', lineHeight: 1.9, fontSize: 15 }}>
