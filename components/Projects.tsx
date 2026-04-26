@@ -7,8 +7,7 @@ const projects = [
     title: 'Plagiarism Checker',
     desc: 'A web-based plagiarism detection tool that compares documents and text for similarity using NLP techniques. Built with Python for the backend logic and a clean HTML/CSS frontend interface.',
     tags: ['Python', 'HTML', 'CSS', 'NLP'],
-    live: '#', github: 'https://github.com/ztesfa88-png/Plagiarism-Checker
-',
+    live: '#', github: 'https://github.com/ztesfa88-png/Plagiarism-Checker',
   },
   {
     num: '002', type: 'DESKTOP APP', emoji: '🏥',
