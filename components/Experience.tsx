@@ -3,24 +3,24 @@ import { useInView } from 'react-intersection-observer'
 
 const jobs = [
   {
-    period: '2022 — PRESENT',
+    period: '2024 — PRESENT',
     title: 'Senior Software Engineer',
-    company: 'Acme Corp',
-    location: 'Remote',
+    company: '.........',
+    location: '.........',
     desc: 'Led architecture of a microservices platform handling 5M+ daily active users. Reduced API latency by 40% through caching strategies. Mentored a team of 4 junior engineers. Drove adoption of TypeScript across all frontend codebases.',
   },
   {
-    period: '2020 — 2022',
+    period: '2024 — 2025',
     title: 'Full-Stack Engineer',
-    company: 'StartupXYZ',
-    location: 'Berlin, DE',
+    company: '...........',
+    location: '..........',
     desc: 'Built and shipped the core product from zero to 50k users in 18 months. Designed the database schema and REST API, developed the React frontend, and set up CI/CD pipelines on AWS.',
   },
   {
-    period: '2019 — 2020',
+    period: '2022 — 2023',
     title: 'Junior Developer',
-    company: 'DigitalAgency',
-    location: 'London, UK',
+    company: '............',
+    location: '.............',
     desc: 'Developed e-commerce solutions for 20+ clients using React and Node.js. Improved page load performance by 60% through code splitting and lazy loading optimizations.',
   },
 ]
