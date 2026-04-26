@@ -7,21 +7,22 @@ const projects = [
     title: 'Plagiarism Checker',
     desc: 'A web-based plagiarism detection tool that compares documents and text for similarity using NLP techniques. Built with Python for the backend logic and a clean HTML/CSS frontend interface.',
     tags: ['Python', 'HTML', 'CSS', 'NLP'],
-    live: '#', github: 'https://github.com/ztesfa88-png',
+    live: '#', github: 'https://github.com/ztesfa88-png/Plagiarism-Checker
+',
   },
   {
     num: '002', type: 'DESKTOP APP', emoji: '🏥',
     title: 'Hospital Management System',
     desc: 'A full-featured hospital management system handling patient records, doctor scheduling, appointments, and billing. Built with Java featuring a robust desktop UI.',
     tags: ['Java', 'OOP', 'Database', 'Desktop App'],
-    live: '#', github: 'https://github.com/ztesfa88-png',
+    live: '#', github: 'https://github.com/ztesfa88-png/HMS',
   },
   {
     num: '003', type: 'WEB APP', emoji: '💼',
     title: 'Personal Portfolio',
     desc: 'This portfolio — a full-stack Next.js app with animated UI, scroll-triggered effects, a working contact form via Nodemailer, and deployed on Vercel.',
     tags: ['Next.js', 'TypeScript', 'React', 'Nodemailer', 'Vercel'],
-    live: 'https://portfolio-ztesfa88.vercel.app', github: 'https://github.com/ztesfa88-png/portfolio',
+    live: 'https://portfolio-seven-lac-26.vercel.app', github: 'https://github.com/ztesfa88-png/portfolio',
   },
 ]
 
