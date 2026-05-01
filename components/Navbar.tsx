@@ -39,6 +39,7 @@ export default function Navbar() {
             >{l}</a>
           ))}
           <a href="#contact" className="btn-primary" style={{ padding: '8px 20px', fontSize: 12 }}>HIRE ME →</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>Resume ↓</a>
         </div>
 
         {/* Mobile hamburger */}
@@ -63,6 +64,7 @@ export default function Navbar() {
             >{l}</a>
           ))}
           <a href="#contact" className="btn-primary" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>HIRE ME →</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>Resume ↓</a>
         </div>
       )}
 
