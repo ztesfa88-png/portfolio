@@ -6,6 +6,22 @@ const links = ['About', 'Projects', 'Experience', 'Contact']
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
+
+  // Load saved theme on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('theme') as 'dark' | 'light' | null
+    const initial = saved ?? 'dark'
+    setTheme(initial)
+    document.documentElement.setAttribute('data-theme', initial)
+  }, [])
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    document.documentElement.setAttribute('data-theme', next)
+    localStorage.setItem('theme', next)
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -13,11 +29,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const isDark = theme === 'dark'
+
   return (
     <nav id="top" style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
       padding: '0 24px',
-      background: scrolled ? 'rgba(10,10,10,0.9)' : 'transparent',
+      background: scrolled ? (isDark ? 'rgba(10,10,10,0.9)' : 'rgba(245,245,245,0.9)') : 'transparent',
       backdropFilter: scrolled ? 'blur(12px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border)' : 'none',
       transition: 'all 0.3s',
@@ -38,17 +56,56 @@ export default function Navbar() {
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
             >{l}</a>
           ))}
+
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+            style={{
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
+              borderRadius: 8,
+              width: 36, height: 36,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer',
+              fontSize: 16,
+              transition: 'border-color 0.2s',
+              flexShrink: 0,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--accent)')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+          >
+            {isDark ? '☀️' : '🌙'}
+          </button>
+
           <a href="#contact" className="btn-primary" style={{ padding: '8px 20px', fontSize: 12 }}>HIRE ME →</a>
           <a href="/resume.docx" download className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>Resume ↓</a>
         </div>
 
-        {/* Mobile hamburger */}
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{
-          display: 'none', background: 'none', border: 'none', color: 'var(--text)',
-          fontSize: 24, cursor: 'pointer',
-        }} className="hamburger" aria-label="Toggle menu">
-          {menuOpen ? '✕' : '☰'}
-        </button>
+        {/* Mobile right side: theme toggle + hamburger */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }} className="mobile-controls">
+          <button
+            onClick={toggleTheme}
+            aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+            style={{
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
+              borderRadius: 8,
+              width: 36, height: 36,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer',
+              fontSize: 16,
+            }}
+          >
+            {isDark ? '☀️' : '🌙'}
+          </button>
+          <button onClick={() => setMenuOpen(!menuOpen)} style={{
+            background: 'none', border: 'none', color: 'var(--text)',
+            fontSize: 24, cursor: 'pointer',
+          }} className="hamburger" aria-label="Toggle menu">
+            {menuOpen ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -69,9 +126,10 @@ export default function Navbar() {
       )}
 
       <style suppressHydrationWarning>{`
+        .mobile-controls { display: none !important; }
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
-          .hamburger { display: block !important; }
+          .mobile-controls { display: flex !important; }
         }
       `}</style>
     </nav>
