@@ -1,30 +1,44 @@
 'use client'
 import { useInView } from 'react-intersection-observer'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0)
-  const { ref, inView } = useInView({ triggerOnce: true })
+  const hasAnimated = useRef(false)
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0, rootMargin: '0px 0px -10px 0px' })
 
   useEffect(() => {
-    if (!inView) return
+    if (!inView || hasAnimated.current) return
+    hasAnimated.current = true
     let start = 0
-    const step = Math.ceil(target / 60)
+    const duration = 1200 // ms
+    const steps = 60
+    const step = Math.max(1, Math.ceil(target / steps))
+    const interval = Math.floor(duration / steps)
     const timer = setInterval(() => {
       start += step
-      if (start >= target) { setCount(target); clearInterval(timer) }
-      else setCount(start)
-    }, 16)
+      if (start >= target) {
+        setCount(target)
+        clearInterval(timer)
+      } else {
+        setCount(start)
+      }
+    }, interval)
     return () => clearInterval(timer)
   }, [inView, target])
 
-  return <span ref={ref}>{count}{suffix}</span>
+  // Show target as fallback if observer never fires (SSR / no JS)
+  return (
+    <span ref={ref}>
+      {count === 0 && !inView ? target : count}{suffix}
+    </span>
+  )
 }
 
 const stats = [
-  { value: 5, suffix: '+', label: 'YEARS EXP' },
-  { value: 40, suffix: '+', label: 'PROJECTS' },
-  { value: 99, suffix: '%', label: 'SATISFACTION' },
+  { value: 3, suffix: '+', label: 'YEARS EXP' },
+  { value: 10, suffix: '+', label: 'PROJECTS' },
+  { value: 100, suffix: '%', label: 'SATISFACTION' },
 ]
 
 export default function Stats() {
