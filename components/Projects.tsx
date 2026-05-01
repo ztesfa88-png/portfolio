@@ -23,6 +23,13 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'React', 'Nodemailer', 'Vercel'],
     live: 'https://portfolio-seven-lac-26.vercel.app', github: 'https://github.com/ztesfa88-png/portfolio',
   },
+  {
+    num: '004', type: 'MOBILE APP', emoji: '🎤',
+    title: 'Campus Talent Show App',
+    desc: 'A real-time mobile platform for managing and voting in campus talent shows. Features live audience voting, participant registration, leaderboard updates via Supabase Realtime, and a clean Flutter UI with Riverpod state management.',
+    tags: ['Flutter', 'Dart', 'Supabase', 'Riverpod', 'PostgreSQL', 'Realtime'],
+    live: '#', github: 'https://github.com/ztesfa88-png',
+  },
 ]
 
 function ProjectCard({ p, i }: { p: typeof projects[0]; i: number }) {
