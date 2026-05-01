@@ -3,32 +3,32 @@ import { useInView } from 'react-intersection-observer'
 
 const projects = [
   {
-    num: '001', type: 'AI / PYTHON TOOL', emoji: '🔍',
+    num: '001', type: 'MOBILE APP', emoji: '🎤',
+    title: 'Campus Talent Show App',
+    desc: 'A cross-platform mobile app for campus talent show registration and live voting. Students register as participants or voters, browse event listings, and cast real-time votes. Built with Flutter and Supabase Realtime so leaderboards update instantly without polling.',
+    tags: ['Flutter', 'Dart', 'Supabase', 'Riverpod', 'PostgreSQL', 'Realtime'],
+    live: '#', github: 'https://github.com/ztesfa88-png/campus_talent-show-flutter-app',
+  },
+  {
+    num: '002', type: 'AI / PYTHON TOOL', emoji: '🔍',
     title: 'Plagiarism Checker',
-    desc: 'A web-based plagiarism detection tool that compares documents and text for similarity using NLP techniques. Built with Python for the backend logic and a clean HTML/CSS frontend interface.',
-    tags: ['Python', 'HTML', 'CSS', 'NLP'],
+    desc: 'A web-based plagiarism detection tool that compares documents and text for similarity using NLP techniques. Computes cosine similarity across tokenised text, highlights matching passages, and presents results through a clean HTML/CSS interface.',
+    tags: ['Python', 'NLP', 'HTML', 'CSS'],
     live: '#', github: 'https://github.com/ztesfa88-png/Plagiarism-Checker',
   },
   {
-    num: '002', type: 'DESKTOP APP', emoji: '🏥',
+    num: '003', type: 'DESKTOP APP', emoji: '🏥',
     title: 'Hospital Management System',
-    desc: 'A full-featured hospital management system handling patient records, doctor scheduling, appointments, and billing. Built with Java featuring a robust desktop UI.',
-    tags: ['Java', 'OOP', 'Database', 'Desktop App'],
+    desc: 'A full-featured desktop application for managing hospital operations — patient records, doctor scheduling, appointments, and billing. Built with Java and JavaFX with a relational database backend and role-based access for staff and admins.',
+    tags: ['Java', 'JavaFX', 'OOP', 'MySQL', 'Desktop App'],
     live: '#', github: 'https://github.com/ztesfa88-png/HMS',
   },
   {
-    num: '003', type: 'WEB APP', emoji: '💼',
+    num: '004', type: 'WEB APP', emoji: '💼',
     title: 'Personal Portfolio',
-    desc: 'This portfolio — a full-stack Next.js app with animated UI, scroll-triggered effects, a working contact form via Nodemailer, and deployed on Vercel.',
+    desc: 'This portfolio — a full-stack Next.js app with animated UI, scroll-triggered counters, a working contact form via Nodemailer, and CI/CD deployment on Vercel. Built with TypeScript throughout for type safety.',
     tags: ['Next.js', 'TypeScript', 'React', 'Nodemailer', 'Vercel'],
     live: 'https://portfolio-seven-lac-26.vercel.app', github: 'https://github.com/ztesfa88-png/portfolio',
-  },
-  {
-    num: '004', type: 'MOBILE APP', emoji: '🎤',
-    title: 'Campus Talent Show App',
-    desc: 'A real-time mobile platform for managing and voting in campus talent shows. Features live audience voting, participant registration, leaderboard updates via Supabase Realtime, and a clean Flutter UI with Riverpod state management.',
-    tags: ['Flutter', 'Dart', 'Supabase', 'Riverpod', 'PostgreSQL', 'Realtime'],
-    live: '#', github: 'https://github.com/ztesfa88-png',
   },
 ]
 
