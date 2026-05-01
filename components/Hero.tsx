@@ -32,7 +32,7 @@ export default function Hero() {
         {/* Status badge */}
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 16px', border: '1px solid var(--border)', borderRadius: 100, marginBottom: 48, background: 'var(--card)' }}>
           <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block', animation: 'pulseGlow 2s infinite' }} />
-          <span style={{ fontFamily: 'Space Mono, monospace', fontSize: 12, color: 'var(--muted)' }}>AVAILABLE FOR WORK — 2025</span>
+          <span style={{ fontFamily: 'Space Mono, monospace', fontSize: 12, color: 'var(--muted)' }}>AVAILABLE FROM JUNE 2025 — OPEN TO REMOTE</span>
         </div>
 
         {/* Headline */}
@@ -48,8 +48,8 @@ export default function Hero() {
         {/* Subtitle */}
         <p style={{ fontFamily: 'Space Mono, monospace', fontSize: 14, color: 'var(--muted)', maxWidth: 480, lineHeight: 1.8, marginBottom: 48 }}>
           <span style={{ color: 'var(--accent)' }}>// </span>
-          Full-stack software engineer specializing in<br />
-          scalable systems, beautiful interfaces & clean code.
+          Software engineering student building real products —<br />
+          web, mobile & desktop across the full stack.
         </p>
 
         {/* CTAs */}
