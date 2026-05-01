@@ -2,12 +2,18 @@
 import { useInView } from 'react-intersection-observer'
 
 const stack = [
-  { icon: '⚛️', name: 'React', level: 95 },
-  { icon: '🟢', name: 'Node.js', level: 90 },
-  { icon: '📘', name: 'TypeScript', level: 92 },
-  { icon: '🐘', name: 'PostgreSQL', level: 85 },
-  { icon: '🐳', name: 'Docker', level: 80 },
-  { icon: '☁️', name: 'AWS', level: 78 },
+  { icon: '📘', name: 'TypeScript', level: 88 },
+  { icon: '⚛️', name: 'React / Next.js', level: 85 },
+  { icon: '🟢', name: 'Node.js', level: 80 },
+  { icon: '🐦', name: 'Flutter / Dart', level: 82 },
+  { icon: '🐍', name: 'Python', level: 80 },
+  { icon: '🐘', name: 'PostgreSQL', level: 78 },
+  { icon: '🍃', name: 'MongoDB', level: 75 },
+  { icon: '🐬', name: 'MySQL', level: 72 },
+  { icon: '🐘', name: 'PHP', level: 70 },
+  { icon: '🐳', name: 'Docker', level: 68 },
+  { icon: '☕', name: 'Java / JavaFX', level: 78 },
+  { icon: '🔧', name: 'REST APIs', level: 85 },
 ]
 
 export default function TechStack() {
