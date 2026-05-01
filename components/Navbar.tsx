@@ -64,7 +64,7 @@ export default function Navbar() {
             >{l}</a>
           ))}
           <a href="#contact" className="btn-primary" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>HIRE ME →</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>Resume ↓</a>
+          <a href="public/resume.docx" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>Resume ↓</a>
         </div>
       )}
 
