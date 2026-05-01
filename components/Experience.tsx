@@ -54,8 +54,8 @@ export default function Experience() {
   return (
     <section id="experience" style={{ padding: '120px 24px', background: 'var(--bg2)', borderTop: '1px solid var(--border)' }}>
       <div className="container">
-        <p className="section-label">04 — Experience</p>
-        <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700, marginBottom: 64 }}>Projects & experience</h2>
+        <p className="section-label">04 — Background</p>
+        <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700, marginBottom: 64 }}>Education & project work</h2>
         <div>
           {jobs.map((job, i) => <JobItem key={i} job={job} i={i} />)}
         </div>
