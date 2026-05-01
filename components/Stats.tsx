@@ -1,36 +1,44 @@
 'use client'
-import { useInView } from 'react-intersection-observer'
 import { useEffect, useState, useRef } from 'react'
 
 function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState<number | null>(null)
+  const ref = useRef<HTMLSpanElement>(null)
   const hasAnimated = useRef(false)
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0, rootMargin: '0px 0px -10px 0px' })
 
   useEffect(() => {
-    if (!inView || hasAnimated.current) return
-    hasAnimated.current = true
-    let start = 0
-    const duration = 1200 // ms
-    const steps = 60
-    const step = Math.max(1, Math.ceil(target / steps))
-    const interval = Math.floor(duration / steps)
-    const timer = setInterval(() => {
-      start += step
-      if (start >= target) {
-        setCount(target)
-        clearInterval(timer)
-      } else {
-        setCount(start)
-      }
-    }, interval)
-    return () => clearInterval(timer)
-  }, [inView, target])
+    const el = ref.current
+    if (!el) return
 
-  // Show target as fallback if observer never fires (SSR / no JS)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || hasAnimated.current) return
+        hasAnimated.current = true
+        observer.disconnect()
+
+        let start = 0
+        const steps = 60
+        const step = Math.max(1, Math.ceil(target / steps))
+        const interval = Math.floor(1200 / steps)
+        const timer = setInterval(() => {
+          start += step
+          if (start >= target) {
+            setCount(target)
+            clearInterval(timer)
+          } else {
+            setCount(start)
+          }
+        }, interval)
+      },
+      { threshold: 0, rootMargin: '0px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [target])
+
   return (
     <span ref={ref}>
-      {count === 0 && !inView ? target : count}{suffix}
+      {count === null ? target : count}{suffix}
     </span>
   )
 }
