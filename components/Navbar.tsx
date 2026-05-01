@@ -3,12 +3,31 @@ import { useState, useEffect } from 'react'
 
 const links = ['About', 'Projects', 'Experience', 'Contact']
 
+const SunIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+    <circle cx="9" cy="9" r="3.5" />
+    <line x1="9" y1="1" x2="9" y2="3" />
+    <line x1="9" y1="15" x2="9" y2="17" />
+    <line x1="1" y1="9" x2="3" y2="9" />
+    <line x1="15" y1="9" x2="17" y2="9" />
+    <line x1="3.05" y1="3.05" x2="4.46" y2="4.46" />
+    <line x1="13.54" y1="13.54" x2="14.95" y2="14.95" />
+    <line x1="14.95" y1="3.05" x2="13.54" y2="4.46" />
+    <line x1="4.46" y1="13.54" x2="3.05" y2="14.95" />
+  </svg>
+)
+
+const MoonIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15.5 10.5A7 7 0 0 1 7.5 2.5a7 7 0 0 0 8 8z" />
+  </svg>
+)
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
-  // Load saved theme on mount
   useEffect(() => {
     const saved = localStorage.getItem('theme') as 'dark' | 'light' | null
     const initial = saved ?? 'dark'
@@ -68,14 +87,14 @@ export default function Navbar() {
               width: 36, height: 36,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               cursor: 'pointer',
-              fontSize: 16,
+              color: 'var(--text)',
               transition: 'border-color 0.2s',
               flexShrink: 0,
             }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--accent)')}
             onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
           >
-            {isDark ? '☀️' : '🌙'}
+            {isDark ? <SunIcon /> : <MoonIcon />}
           </button>
 
           <a href="#contact" className="btn-primary" style={{ padding: '8px 20px', fontSize: 12 }}>HIRE ME →</a>
@@ -94,10 +113,10 @@ export default function Navbar() {
               width: 36, height: 36,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               cursor: 'pointer',
-              fontSize: 16,
+              color: 'var(--text)',
             }}
           >
-            {isDark ? '☀️' : '🌙'}
+            {isDark ? <SunIcon /> : <MoonIcon />}
           </button>
           <button onClick={() => setMenuOpen(!menuOpen)} style={{
             background: 'none', border: 'none', color: 'var(--text)',
