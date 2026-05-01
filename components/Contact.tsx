@@ -53,7 +53,7 @@ export default function Contact() {
               { icon: '✉', label: 'ztesfa88@gmail.com', href: 'mailto:ztesfa88@gmail.com' },
               { icon: '⌥', label: 'GitHub', href: 'https://github.com/ztesfa88-png' },
               { icon: 'in', label: 'LinkedIn', href: 'https://www.linkedin.com/in/zelalem-tesfa-618a64403' },
-              { icon: '↓', label: 'Resume PDF', href: '#' },
+              { icon: '↓', label: 'Resume PDF', href: '/resume.docx' },
             ].map(link => (
               <a key={link.label} href={link.href} style={{
                 display: 'flex', alignItems: 'center', gap: 12,
