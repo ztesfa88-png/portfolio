@@ -4,24 +4,24 @@ import { useInView } from 'react-intersection-observer'
 const jobs = [
   {
     period: '2024 — PRESENT',
-    title: 'Senior Software Engineer',
-    company: '.........',
-    location: '.........',
-    desc: 'Led architecture of a microservices platform handling 5M+ daily active users. Reduced API latency by 40% through caching strategies. Mentored a team of 4 junior engineers. Drove adoption of TypeScript across all frontend codebases.',
+    title: 'Freelance Full-Stack Developer',
+    company: 'Self-Employed',
+    location: 'Remote',
+    desc: 'Building web applications and tools for clients across various industries. Delivered projects end-to-end — from requirements and architecture through deployment. Stack: Next.js, TypeScript, Node.js, PostgreSQL, and Vercel.',
   },
   {
-    period: '2024 — 2025',
-    title: 'Full-Stack Engineer',
-    company: '...........',
-    location: '..........',
-    desc: 'Built and shipped the core product from zero to 50k users in 18 months. Designed the database schema and REST API, developed the React frontend, and set up CI/CD pipelines on AWS.',
+    period: '2023 — 2024',
+    title: 'Flutter Mobile Developer',
+    company: 'Campus Project — Talent Show App',
+    location: 'Wolkite, Ethiopia',
+    desc: 'Designed and built a full-featured campus talent show platform used for live event voting and participant management. Integrated Supabase for real-time updates and PostgreSQL for persistent data. Stack: Flutter, Dart, Supabase, Riverpod.',
   },
   {
     period: '2022 — 2023',
-    title: 'Junior Developer',
-    company: '............',
-    location: '.............',
-    desc: 'Developed e-commerce solutions for 20+ clients using React and Node.js. Improved page load performance by 60% through code splitting and lazy loading optimizations.',
+    title: 'Junior Developer (Academic & Personal Projects)',
+    company: 'University / Open Source',
+    location: 'Wolkite, Ethiopia',
+    desc: 'Developed a hospital management system in Java/JavaFX and a Python-based plagiarism checker with NLP. Focused on OOP design, database modelling, and building clean desktop and web interfaces.',
   },
 ]
 
@@ -55,7 +55,7 @@ export default function Experience() {
     <section id="experience" style={{ padding: '120px 24px', background: 'var(--bg2)', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <p className="section-label">04 — Experience</p>
-        <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700, marginBottom: 64 }}>Where I've worked</h2>
+        <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700, marginBottom: 64 }}>Projects & experience</h2>
         <div>
           {jobs.map((job, i) => <JobItem key={i} job={job} i={i} />)}
         </div>
