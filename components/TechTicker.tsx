@@ -1,5 +1,5 @@
 'use client'
-const techs = ['React ✦', 'Node.js ✦', 'TypeScript ✦', 'Next.js ✦', 'PostgreSQL ✦', 'Docker ✦', 'AWS ✦', 'GraphQL ✦', 'Python ✦', 'Redis ✦']
+const techs = ['React ✦', 'Node.js ✦', 'TypeScript ✦', 'Next.js ✦', 'PostgreSQL ✦', 'AWS ✦', 'Python ✦']
 
 export default function TechTicker() {
   const doubled = [...techs, ...techs]
