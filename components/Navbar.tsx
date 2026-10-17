@@ -98,7 +98,7 @@ export default function Navbar() {
           </button>
 
           <a href="#contact" className="btn-primary" style={{ padding: '8px 20px', fontSize: 12 }}>HIRE ME →</a>
-          <a href="/resume.docx" download className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>Resume ↓</a>
+          <a href="/resume.pdf" download className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>Resume ↓</a>
         </div>
 
         {/* Mobile right side: theme toggle + hamburger */}
@@ -140,7 +140,7 @@ export default function Navbar() {
             >{l}</a>
           ))}
           <a href="#contact" className="btn-primary" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>HIRE ME →</a>
-          <a href="/resume.docx" download className="btn-outline" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>Resume ↓</a>
+          <a href="/resume.pdf" download className="btn-outline" style={{ textAlign: 'center' }} onClick={() => setMenuOpen(false)}>Resume ↓</a>
         </div>
       )}
 
