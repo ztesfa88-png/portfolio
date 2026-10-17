@@ -46,7 +46,7 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
 const stats = [
   { value: 3, suffix: '+', label: 'YEARS EXP' },
   { value: 10, suffix: '+', label: 'PROJECTS' },
-  { value: 100, suffix: '%', label: 'SATISFACTION' },
+  { value: 98, suffix: '%', label: 'SATISFACTION' },
 ]
 
 export default function Stats() {

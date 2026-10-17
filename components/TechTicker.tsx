@@ -1,21 +1,23 @@
-'use client'
-const techs = ['React ✦', 'Node.js ✦', 'TypeScript ✦', 'Next.js ✦', 'PostgreSQL ✦', 'AWS ✦', 'Python ✦']
+const techs = ['React ✦', 'Node.js ✦', 'TypeScript ✦','Flutter ✦', 'Next.js ✦', 'PostgreSQL ✦', 'AWS ✦', 'Python ✦']
 
 export default function TechTicker() {
-  const doubled = [...techs, ...techs]
   return (
-    <div style={{ overflow: 'hidden', borderBottom: '1px solid var(--border)', padding: '16px 0', background: 'var(--bg2)' }}>
-      <div style={{ display: 'flex', animation: 'ticker 20s linear infinite', width: 'max-content' }}>
-        {doubled.map((t, i) => (
-          <span key={i} style={{
-            fontFamily: 'Space Mono, monospace', fontSize: 13, color: 'var(--muted)',
-            padding: '0 24px', whiteSpace: 'nowrap', transition: 'color 0.2s',
-          }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent)')}
-            onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
-          >{t}</span>
+    <div style={{ borderBottom: '1px solid var(--border)', padding: '16px 0', background: 'var(--bg2)' }}>
+      <ul
+        className="container"
+        aria-label="Technologies"
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: 12,
+          listStyle: 'none',
+        }}
+      >
+        {techs.map((tech) => (
+          <li key={tech} className="tag">{tech}</li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }
