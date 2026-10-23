@@ -30,7 +30,7 @@ export default function Home() {
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <span>© 2025 Zelalem Tesfa. All rights reserved.</span>
-          <span>Designed & built with ♥ by Zelalem</span>
+          <span>Designed & built by Zelalem</span>
           <a href="#top" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Back to top ↑</a>
         </div>
       </footer>

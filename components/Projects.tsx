@@ -45,7 +45,7 @@ function ProjectCard({ p, i }: { p: typeof projects[0]; i: number }) {
   const Icon = p.icon
 
   return (
-    <div ref={ref} style={{
+    <div ref={ref} className="project-card" style={{
       border: '1px solid var(--border)', borderRadius: 16, overflow: 'hidden',
       background: 'var(--card)', display: 'grid', gridTemplateColumns: '1fr auto',
       opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(40px)',
@@ -73,7 +73,7 @@ function ProjectCard({ p, i }: { p: typeof projects[0]; i: number }) {
           <a href={p.github} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: '8px 20px', fontSize: 12 }}>⌥ GitHub</a>
         </div>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 40, background: 'rgba(255,255,255,0.02)' }}>
+      <div className="project-card-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 40, background: 'rgba(255,255,255,0.02)' }}>
         <Icon size={64} color={p.iconColor} aria-hidden="true" />
       </div>
     </div>

@@ -6,24 +6,29 @@ type Status = 'idle' | 'loading' | 'success' | 'error'
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState<Status>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
+    setErrorMessage('')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
+      const result = await res.json()
       if (res.ok) {
         setStatus('success')
         setForm({ name: '', email: '', message: '' })
       } else {
         setStatus('error')
+        setErrorMessage(result.error || 'Unable to send your message. Please try again.')
       }
     } catch {
       setStatus('error')
+      setErrorMessage('Unable to send your message. Please check your connection and try again.')
     }
   }
 
@@ -110,7 +115,7 @@ export default function Contact() {
             <p style={{ fontFamily: 'Space Mono, monospace', fontSize: 13, color: 'var(--accent)' }}>✓ Message sent! I'll get back to you soon.</p>
           )}
           {status === 'error' && (
-            <p style={{ fontFamily: 'Space Mono, monospace', fontSize: 13, color: '#ff4444' }}>✗ Something went wrong. Please try again.</p>
+            <p style={{ fontFamily: 'Space Mono, monospace', fontSize: 13, color: '#ff4444' }}>✗ {errorMessage}</p>
           )}
         </form>
       </div>

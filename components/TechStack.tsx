@@ -150,7 +150,7 @@ export default function TechStack() {
                     style={{
                       height: '100%',
                       borderRadius: 99,
-                      background: `linear-gradient(90deg, ${item.color}, var(--accent2))`,
+                      background: item.color,
                       width: inView ? `${item.level}%` : '0%',
                       transition: `width 1s ease ${i * 100}ms`,
                     }}

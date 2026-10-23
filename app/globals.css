@@ -168,3 +168,43 @@ section { padding: 120px 0; }
   height: 1px;
   background: var(--border);
 }
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 100svh !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 12vw, 72px) !important;
+    letter-spacing: -2px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-status {
+    max-width: 100%;
+    margin-bottom: 32px !important;
+  }
+
+  .hero-status > span:last-child {
+    font-size: 10px !important;
+  }
+
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+
+  .project-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .project-card > div:first-child {
+    min-width: 0;
+    padding: 20px !important;
+  }
+
+  .project-card-icon {
+    display: none !important;
+  }
+}
